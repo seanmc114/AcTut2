@@ -198,7 +198,7 @@ function renderTiles(){
       </div>
       <div class="bar"><div class="fill" style="width:${fill}%"></div></div>
     `;
-    tile.addEventListener("click", ()=>openModal(subject, level));
+   tile.addEventListener("click", ()=>openSubjectHub(subject));
     tiles.appendChild(tile);
   });
 }
