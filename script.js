@@ -43,7 +43,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
  showSetup();
 });
+// ========= SUBJECT HUB CONTROL =========
 
+function openSubjectHub(subject){
+  document.getElementById("dash").classList.add("hidden");
+  document.getElementById("subjectHub").classList.remove("hidden");
+  document.getElementById("subjectTitle").innerText = subject;
+  currentKey = subject;
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  // Back button
+  document.getElementById("btnBackToDash").onclick = function(){
+    document.getElementById("subjectHub").classList.add("hidden");
+    document.getElementById("dash").classList.remove("hidden");
+  };
+
+  // Turbito button
+  document.getElementById("btnTurbito").onclick = function(){
+    if(currentKey){
+      startTurbito(currentKey);
+    }
+  };
+
+});
 function wire(){
 
   const safeClick = (id, handler) => {
